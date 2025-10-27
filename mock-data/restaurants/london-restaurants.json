@@ -1,0 +1,195 @@
+{
+  "city": "London",
+  "restaurants": [
+    {
+      "property_id": "london_italian_001",
+      "name": "London Italian Restaurant",
+      "cuisine_type": "Italian",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main1",
+              "name": "Signature Dish",
+              "price_usd": 30
+            }
+          ]
+        }
+      ],
+      "rating": "4.6"
+    },
+    {
+      "property_id": "london_japanese_002",
+      "name": "London Japanese Restaurant",
+      "cuisine_type": "Japanese",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main2",
+              "name": "Signature Dish",
+              "price_usd": 32
+            }
+          ]
+        }
+      ],
+      "rating": "4.2"
+    },
+    {
+      "property_id": "london_french_003",
+      "name": "London French Restaurant",
+      "cuisine_type": "French",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main3",
+              "name": "Signature Dish",
+              "price_usd": 34
+            }
+          ]
+        }
+      ],
+      "rating": "4.2"
+    },
+    {
+      "property_id": "london_indian_004",
+      "name": "London Indian Restaurant",
+      "cuisine_type": "Indian",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main4",
+              "name": "Signature Dish",
+              "price_usd": 36
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "london_chinese_005",
+      "name": "London Chinese Restaurant",
+      "cuisine_type": "Chinese",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main5",
+              "name": "Signature Dish",
+              "price_usd": 38
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "london_thai_006",
+      "name": "London Thai Restaurant",
+      "cuisine_type": "Thai",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main6",
+              "name": "Signature Dish",
+              "price_usd": 40
+            }
+          ]
+        }
+      ],
+      "rating": "4.3"
+    },
+    {
+      "property_id": "london_mediterranean_007",
+      "name": "London Mediterranean Restaurant",
+      "cuisine_type": "Mediterranean",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main7",
+              "name": "Signature Dish",
+              "price_usd": 42
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "london_mexican_008",
+      "name": "London Mexican Restaurant",
+      "cuisine_type": "Mexican",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main8",
+              "name": "Signature Dish",
+              "price_usd": 44
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "london_american_009",
+      "name": "London American Restaurant",
+      "cuisine_type": "American",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main9",
+              "name": "Signature Dish",
+              "price_usd": 46
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "london_fusion_010",
+      "name": "London Fusion Restaurant",
+      "cuisine_type": "Fusion",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main10",
+              "name": "Signature Dish",
+              "price_usd": 48
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    }
+  ]
+}

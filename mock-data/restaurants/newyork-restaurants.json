@@ -1,0 +1,195 @@
+{
+  "city": "New York",
+  "restaurants": [
+    {
+      "property_id": "newyork_italian_001",
+      "name": "New York Italian Restaurant",
+      "cuisine_type": "Italian",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main1",
+              "name": "Signature Dish",
+              "price_usd": 30
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "newyork_japanese_002",
+      "name": "New York Japanese Restaurant",
+      "cuisine_type": "Japanese",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main2",
+              "name": "Signature Dish",
+              "price_usd": 32
+            }
+          ]
+        }
+      ],
+      "rating": "4.3"
+    },
+    {
+      "property_id": "newyork_french_003",
+      "name": "New York French Restaurant",
+      "cuisine_type": "French",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main3",
+              "name": "Signature Dish",
+              "price_usd": 34
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "newyork_indian_004",
+      "name": "New York Indian Restaurant",
+      "cuisine_type": "Indian",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main4",
+              "name": "Signature Dish",
+              "price_usd": 36
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "newyork_chinese_005",
+      "name": "New York Chinese Restaurant",
+      "cuisine_type": "Chinese",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main5",
+              "name": "Signature Dish",
+              "price_usd": 38
+            }
+          ]
+        }
+      ],
+      "rating": "4.4"
+    },
+    {
+      "property_id": "newyork_thai_006",
+      "name": "New York Thai Restaurant",
+      "cuisine_type": "Thai",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main6",
+              "name": "Signature Dish",
+              "price_usd": 40
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "newyork_mediterranean_007",
+      "name": "New York Mediterranean Restaurant",
+      "cuisine_type": "Mediterranean",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main7",
+              "name": "Signature Dish",
+              "price_usd": 42
+            }
+          ]
+        }
+      ],
+      "rating": "4.2"
+    },
+    {
+      "property_id": "newyork_mexican_008",
+      "name": "New York Mexican Restaurant",
+      "cuisine_type": "Mexican",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main8",
+              "name": "Signature Dish",
+              "price_usd": 44
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "newyork_american_009",
+      "name": "New York American Restaurant",
+      "cuisine_type": "American",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main9",
+              "name": "Signature Dish",
+              "price_usd": 46
+            }
+          ]
+        }
+      ],
+      "rating": "4.4"
+    },
+    {
+      "property_id": "newyork_fusion_010",
+      "name": "New York Fusion Restaurant",
+      "cuisine_type": "Fusion",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main10",
+              "name": "Signature Dish",
+              "price_usd": 48
+            }
+          ]
+        }
+      ],
+      "rating": "4.2"
+    }
+  ]
+}

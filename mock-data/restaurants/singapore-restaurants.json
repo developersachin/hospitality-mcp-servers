@@ -1,0 +1,195 @@
+{
+  "city": "Singapore",
+  "restaurants": [
+    {
+      "property_id": "singapore_italian_001",
+      "name": "Singapore Italian Restaurant",
+      "cuisine_type": "Italian",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main1",
+              "name": "Signature Dish",
+              "price_usd": 30
+            }
+          ]
+        }
+      ],
+      "rating": "4.6"
+    },
+    {
+      "property_id": "singapore_japanese_002",
+      "name": "Singapore Japanese Restaurant",
+      "cuisine_type": "Japanese",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main2",
+              "name": "Signature Dish",
+              "price_usd": 32
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "singapore_french_003",
+      "name": "Singapore French Restaurant",
+      "cuisine_type": "French",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main3",
+              "name": "Signature Dish",
+              "price_usd": 34
+            }
+          ]
+        }
+      ],
+      "rating": "4.0"
+    },
+    {
+      "property_id": "singapore_indian_004",
+      "name": "Singapore Indian Restaurant",
+      "cuisine_type": "Indian",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main4",
+              "name": "Signature Dish",
+              "price_usd": 36
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "singapore_chinese_005",
+      "name": "Singapore Chinese Restaurant",
+      "cuisine_type": "Chinese",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main5",
+              "name": "Signature Dish",
+              "price_usd": 38
+            }
+          ]
+        }
+      ],
+      "rating": "5.0"
+    },
+    {
+      "property_id": "singapore_thai_006",
+      "name": "Singapore Thai Restaurant",
+      "cuisine_type": "Thai",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main6",
+              "name": "Signature Dish",
+              "price_usd": 40
+            }
+          ]
+        }
+      ],
+      "rating": "4.4"
+    },
+    {
+      "property_id": "singapore_mediterranean_007",
+      "name": "Singapore Mediterranean Restaurant",
+      "cuisine_type": "Mediterranean",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main7",
+              "name": "Signature Dish",
+              "price_usd": 42
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "singapore_mexican_008",
+      "name": "Singapore Mexican Restaurant",
+      "cuisine_type": "Mexican",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main8",
+              "name": "Signature Dish",
+              "price_usd": 44
+            }
+          ]
+        }
+      ],
+      "rating": "4.7"
+    },
+    {
+      "property_id": "singapore_american_009",
+      "name": "Singapore American Restaurant",
+      "cuisine_type": "American",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main9",
+              "name": "Signature Dish",
+              "price_usd": 46
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "singapore_fusion_010",
+      "name": "Singapore Fusion Restaurant",
+      "cuisine_type": "Fusion",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main10",
+              "name": "Signature Dish",
+              "price_usd": 48
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    }
+  ]
+}

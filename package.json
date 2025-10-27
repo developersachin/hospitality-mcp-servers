@@ -1,0 +1,47 @@
+{
+  "name": "hospitality-mcp-servers",
+  "version": "1.0.0",
+  "description": "White-Label AI Hospitality Assistant - MCP Data Layer",
+  "main": "index.js",
+  "scripts": {
+    "start:all": "concurrently \"npm run start:orchestrator\" \"npm run start:hotel\" \"npm run start:restaurant\" \"npm run start:user\" \"npm run start:partner\"",
+    "start:orchestrator": "cd src/orchestrator-mcp && node server.js",
+    "start:hotel": "cd src/hotel-mcp && node server.js",
+    "start:restaurant": "cd src/restaurant-mcp && node server.js",
+    "start:user": "cd src/user-mcp && node server.js",
+    "start:partner": "cd src/partner-mcp && node server.js",
+    "test": "node scripts/test-mcps.js",
+    "build:lambda": "node scripts/build-lambda.js",
+    "deploy:lambda": "node scripts/deploy-lambda.js",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "mcp",
+    "hospitality",
+    "ai",
+    "booking",
+    "saas"
+  ],
+  "author": "Your Name",
+  "license": "PROPRIETARY",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "axios": "^1.13.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^8.55.0",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

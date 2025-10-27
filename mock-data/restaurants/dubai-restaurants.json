@@ -1,0 +1,195 @@
+{
+  "city": "Dubai",
+  "restaurants": [
+    {
+      "property_id": "dubai_italian_001",
+      "name": "Dubai Italian Restaurant",
+      "cuisine_type": "Italian",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main1",
+              "name": "Signature Dish",
+              "price_usd": 30
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "dubai_japanese_002",
+      "name": "Dubai Japanese Restaurant",
+      "cuisine_type": "Japanese",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main2",
+              "name": "Signature Dish",
+              "price_usd": 32
+            }
+          ]
+        }
+      ],
+      "rating": "4.7"
+    },
+    {
+      "property_id": "dubai_french_003",
+      "name": "Dubai French Restaurant",
+      "cuisine_type": "French",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main3",
+              "name": "Signature Dish",
+              "price_usd": 34
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "dubai_indian_004",
+      "name": "Dubai Indian Restaurant",
+      "cuisine_type": "Indian",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main4",
+              "name": "Signature Dish",
+              "price_usd": 36
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "dubai_chinese_005",
+      "name": "Dubai Chinese Restaurant",
+      "cuisine_type": "Chinese",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main5",
+              "name": "Signature Dish",
+              "price_usd": 38
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "dubai_thai_006",
+      "name": "Dubai Thai Restaurant",
+      "cuisine_type": "Thai",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main6",
+              "name": "Signature Dish",
+              "price_usd": 40
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "dubai_mediterranean_007",
+      "name": "Dubai Mediterranean Restaurant",
+      "cuisine_type": "Mediterranean",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main7",
+              "name": "Signature Dish",
+              "price_usd": 42
+            }
+          ]
+        }
+      ],
+      "rating": "5.0"
+    },
+    {
+      "property_id": "dubai_mexican_008",
+      "name": "Dubai Mexican Restaurant",
+      "cuisine_type": "Mexican",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main8",
+              "name": "Signature Dish",
+              "price_usd": 44
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "dubai_american_009",
+      "name": "Dubai American Restaurant",
+      "cuisine_type": "American",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main9",
+              "name": "Signature Dish",
+              "price_usd": 46
+            }
+          ]
+        }
+      ],
+      "rating": "4.5"
+    },
+    {
+      "property_id": "dubai_fusion_010",
+      "name": "Dubai Fusion Restaurant",
+      "cuisine_type": "Fusion",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main10",
+              "name": "Signature Dish",
+              "price_usd": 48
+            }
+          ]
+        }
+      ],
+      "rating": "4.6"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "city": "New Delhi",
+  "restaurants": [
+    {
+      "property_id": "newdelhi_italian_001",
+      "name": "New Delhi Italian Restaurant",
+      "cuisine_type": "Italian",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main1",
+              "name": "Signature Dish",
+              "price_usd": 30
+            }
+          ]
+        }
+      ],
+      "rating": "4.7"
+    },
+    {
+      "property_id": "newdelhi_japanese_002",
+      "name": "New Delhi Japanese Restaurant",
+      "cuisine_type": "Japanese",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main2",
+              "name": "Signature Dish",
+              "price_usd": 32
+            }
+          ]
+        }
+      ],
+      "rating": "4.7"
+    },
+    {
+      "property_id": "newdelhi_french_003",
+      "name": "New Delhi French Restaurant",
+      "cuisine_type": "French",
+      "price_range": "$$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main3",
+              "name": "Signature Dish",
+              "price_usd": 34
+            }
+          ]
+        }
+      ],
+      "rating": "4.3"
+    },
+    {
+      "property_id": "newdelhi_indian_004",
+      "name": "New Delhi Indian Restaurant",
+      "cuisine_type": "Indian",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main4",
+              "name": "Signature Dish",
+              "price_usd": 36
+            }
+          ]
+        }
+      ],
+      "rating": "4.9"
+    },
+    {
+      "property_id": "newdelhi_chinese_005",
+      "name": "New Delhi Chinese Restaurant",
+      "cuisine_type": "Chinese",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main5",
+              "name": "Signature Dish",
+              "price_usd": 38
+            }
+          ]
+        }
+      ],
+      "rating": "4.2"
+    },
+    {
+      "property_id": "newdelhi_thai_006",
+      "name": "New Delhi Thai Restaurant",
+      "cuisine_type": "Thai",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main6",
+              "name": "Signature Dish",
+              "price_usd": 40
+            }
+          ]
+        }
+      ],
+      "rating": "4.1"
+    },
+    {
+      "property_id": "newdelhi_mediterranean_007",
+      "name": "New Delhi Mediterranean Restaurant",
+      "cuisine_type": "Mediterranean",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main7",
+              "name": "Signature Dish",
+              "price_usd": 42
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "newdelhi_mexican_008",
+      "name": "New Delhi Mexican Restaurant",
+      "cuisine_type": "Mexican",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main8",
+              "name": "Signature Dish",
+              "price_usd": 44
+            }
+          ]
+        }
+      ],
+      "rating": "4.8"
+    },
+    {
+      "property_id": "newdelhi_american_009",
+      "name": "New Delhi American Restaurant",
+      "cuisine_type": "American",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main9",
+              "name": "Signature Dish",
+              "price_usd": 46
+            }
+          ]
+        }
+      ],
+      "rating": "4.7"
+    },
+    {
+      "property_id": "newdelhi_fusion_010",
+      "name": "New Delhi Fusion Restaurant",
+      "cuisine_type": "Fusion",
+      "price_range": "$$",
+      "menu_categories": [
+        {
+          "category": "Main Course",
+          "items": [
+            {
+              "item_id": "main10",
+              "name": "Signature Dish",
+              "price_usd": 48
+            }
+          ]
+        }
+      ],
+      "rating": "4.3"
+    }
+  ]
+}

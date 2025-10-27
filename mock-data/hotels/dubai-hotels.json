@@ -1,0 +1,4995 @@
+{
+  "city": "Dubai",
+  "hotels": [
+    {
+      "property_id": "dubai_grand_001",
+      "name": "Dubai Grand Hotel",
+      "address": "100 Main Street, Dubai",
+      "star_rating": 5,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.28262133098086,
+        "lng": 55.91904200363119
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 160
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 265
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 475
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-11-02": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-03": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-11-04": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-05": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-06": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-07": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-08": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-09": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-10": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-11": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-12": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-13": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-14": {
+          "standard_room": 11,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-15": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-16": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-17": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-18": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-19": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-20": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-21": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-22": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-23": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-24": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-11-25": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-11-26": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-27": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-11-28": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-29": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-30": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-01": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-02": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-03": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-04": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-05": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-06": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-07": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-08": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-09": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-10": {
+          "standard_room": 12,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-11": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-12": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-13": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-12-14": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-15": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-16": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-17": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-18": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-19": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-20": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-21": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-22": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-12-23": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-24": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-25": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-26": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-27": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-12-28": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-29": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-30": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-31": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2026-01-01": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-02": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-03": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-04": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-05": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-06": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-07": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-08": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-09": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2026-01-10": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-11": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-12": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-13": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2026-01-14": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-15": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-16": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-17": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-18": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-19": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-20": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-21": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-22": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2026-01-23": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-24": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-25": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-26": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2026-01-27": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-28": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2026-01-29": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.2"
+    },
+    {
+      "property_id": "dubai_plaza_002",
+      "name": "Dubai Plaza Hotel",
+      "address": "200 Main Street, Dubai",
+      "star_rating": 5,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.79693213776565,
+        "lng": 55.953145150699164
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 170
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 280
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 500
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-02": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-03": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-04": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-11-05": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-11-06": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-07": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-08": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-09": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-10": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-11": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-12": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-13": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-11-14": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-11-15": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-11-16": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-17": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-18": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-19": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-20": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-21": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-22": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-11-23": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-24": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-25": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-26": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-27": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-28": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-29": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-30": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-01": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-12-02": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-03": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-04": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-05": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-06": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-07": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-08": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-09": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-12-10": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-12-11": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-12": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-13": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-14": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-15": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-16": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-17": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-18": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-19": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-12-20": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-12-21": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-22": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-23": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-24": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-12-25": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-26": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-27": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-28": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-29": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-30": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-31": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2026-01-01": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-02": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-03": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-04": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-05": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-06": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2026-01-07": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-08": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-09": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-10": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-11": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-12": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-13": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-15": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-16": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-17": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-18": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-19": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-20": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2026-01-21": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-22": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-24": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-25": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-26": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-27": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2026-01-28": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2026-01-29": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.7"
+    },
+    {
+      "property_id": "dubai_resort_003",
+      "name": "Dubai Resort Hotel",
+      "address": "300 Main Street, Dubai",
+      "star_rating": 5,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.712483482331226,
+        "lng": 55.72835012279456
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 180
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 295
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 525
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-02": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-03": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-11-04": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-11-05": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-06": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-07": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-08": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-11-09": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-10": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-11": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-12": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-13": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-14": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-15": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-16": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-17": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-18": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-19": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-20": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-11-21": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-22": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-23": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-24": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-25": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-26": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-27": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-28": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-29": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-30": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-01": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-02": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-03": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-04": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-05": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-06": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-12-07": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-08": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-09": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-10": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-12-11": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-12": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-13": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-14": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-15": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-16": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-12-17": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-18": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-19": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-12-20": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-21": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-22": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-23": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-24": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-25": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-26": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-12-27": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-28": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-29": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-30": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-31": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-01": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2026-01-02": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-03": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-04": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2026-01-05": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-06": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2026-01-07": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-08": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-09": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-10": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-11": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-12": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-13": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-15": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-16": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-17": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-18": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2026-01-19": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-20": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2026-01-21": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-22": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-24": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-25": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-26": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-27": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-28": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2026-01-29": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.3"
+    },
+    {
+      "property_id": "dubai_suites_004",
+      "name": "Dubai Suites Hotel",
+      "address": "400 Main Street, Dubai",
+      "star_rating": 4,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.22741229048711,
+        "lng": 55.83520742194444
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 190
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 310
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 550
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-02": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-11-03": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-11-04": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-05": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-06": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-11-07": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-08": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-09": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-10": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-11": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-12": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-13": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-14": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-15": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-16": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-17": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-18": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-19": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-20": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-21": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-22": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-23": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-24": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-25": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-26": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-11-27": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-28": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-29": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-30": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-01": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-02": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-03": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-04": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-05": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-06": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-07": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-08": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-09": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-10": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-11": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-12": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-13": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-14": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-15": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-16": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-12-17": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-18": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-12-19": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-20": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-21": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-22": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-12-23": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-24": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-25": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-12-26": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-27": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-28": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-29": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-30": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-31": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-01": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2026-01-02": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-03": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-04": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2026-01-05": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-06": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-07": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2026-01-08": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-09": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2026-01-10": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-11": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-12": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2026-01-13": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-14": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2026-01-15": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-16": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-17": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2026-01-18": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-19": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2026-01-20": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-21": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-22": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-24": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-25": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-26": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-27": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-28": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-29": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.4"
+    },
+    {
+      "property_id": "dubai_palace_005",
+      "name": "Dubai Palace Hotel",
+      "address": "500 Main Street, Dubai",
+      "star_rating": 4,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.555690326602793,
+        "lng": 55.86650982436157
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 200
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 325
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 575
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-02": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-03": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-04": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-05": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-06": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-07": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-08": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-11-09": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-11-10": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-11": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-12": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-13": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-14": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-15": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-16": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-17": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-18": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-19": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-11-20": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-21": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-22": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-23": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-11-24": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-25": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-11-26": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-27": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-28": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-29": {
+          "standard_room": 11,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-30": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-01": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-02": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-03": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-04": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-05": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-06": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-07": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-08": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-12-09": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-12-10": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-11": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-12": {
+          "standard_room": 11,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-13": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-14": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-15": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-16": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-17": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-18": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-19": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-20": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-21": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-22": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-23": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-24": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-25": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-26": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-27": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-28": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-29": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-30": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-31": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-01": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-02": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-03": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2026-01-04": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-05": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-06": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-07": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-08": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-09": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-10": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-11": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-12": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-13": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-14": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-15": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-16": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-17": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-18": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-19": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2026-01-20": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-21": {
+          "standard_room": 11,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-22": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-24": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-25": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-26": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-27": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2026-01-28": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-29": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.2"
+    },
+    {
+      "property_id": "dubai_tower_006",
+      "name": "Dubai Tower Hotel",
+      "address": "600 Main Street, Dubai",
+      "star_rating": 4,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.46921934019556,
+        "lng": 55.147958922818326
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 210
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 340
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 600
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-11-02": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-11-03": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-04": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-05": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-11-06": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-07": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-08": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-09": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-11-10": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-11": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-12": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-11-13": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-14": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-15": {
+          "standard_room": 11,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-16": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-17": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-18": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-19": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-11-20": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-21": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-22": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-23": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-11-24": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-25": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-26": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-27": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-28": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-11-29": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-30": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-12-01": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-02": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-12-03": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-04": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-05": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-12-06": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-12-07": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-08": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-09": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-10": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-11": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-12": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-13": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-14": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-15": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-16": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-17": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-18": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-19": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-20": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-21": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-22": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-23": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-24": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-25": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-26": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-27": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-28": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-29": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-30": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-31": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-01": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2026-01-02": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-03": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-04": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-05": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2026-01-06": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-07": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-08": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-09": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-10": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2026-01-11": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2026-01-12": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2026-01-13": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-15": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-16": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-17": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-18": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-19": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-20": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-21": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-22": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-23": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-24": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-25": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2026-01-26": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-27": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2026-01-28": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2026-01-29": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.1"
+    },
+    {
+      "property_id": "dubai_crown_007",
+      "name": "Dubai Crown Hotel",
+      "address": "700 Main Street, Dubai",
+      "star_rating": 4,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.57161345692743,
+        "lng": 55.70011022278641
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 220
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 355
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 625
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-02": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-03": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-04": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-05": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-06": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-07": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-08": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-09": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-10": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-11": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-12": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-13": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-14": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-15": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-16": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-17": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-18": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-19": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-20": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-11-21": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-22": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-11-23": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-24": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-25": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-26": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-27": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-28": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-29": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-11-30": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-01": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-02": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-03": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-04": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-05": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-06": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-07": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-08": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-09": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-10": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-11": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-12": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-13": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-14": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-12-15": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-16": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-17": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-12-18": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-12-19": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-20": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-21": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-22": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-23": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-24": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-25": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-26": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-27": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-28": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-29": {
+          "standard_room": 9,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-30": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-31": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-01": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-02": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-03": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-04": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-05": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-06": {
+          "standard_room": 12,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2026-01-07": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-08": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2026-01-09": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-10": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-11": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-12": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-13": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2026-01-14": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-15": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-16": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-17": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-18": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2026-01-19": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-20": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-21": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2026-01-22": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-23": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-24": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2026-01-25": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-26": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2026-01-27": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-28": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-29": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.9"
+    },
+    {
+      "property_id": "dubai_royal_008",
+      "name": "Dubai Royal Hotel",
+      "address": "800 Main Street, Dubai",
+      "star_rating": 3,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.00369362491905,
+        "lng": 55.13192889800026
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 230
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 370
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 650
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-02": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-03": {
+          "standard_room": 12,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-04": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-11-05": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-06": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-07": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-08": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-09": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-10": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-11": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-11-12": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-13": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-11-14": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-11-15": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-16": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-17": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-18": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-19": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-20": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-21": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-22": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-23": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-24": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-11-25": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2025-11-26": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-27": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-28": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-29": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-11-30": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-01": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-02": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-03": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-04": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-05": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-12-06": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-07": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-08": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-09": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-10": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-11": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-12": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-13": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-14": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-15": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-12-16": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-17": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-12-18": {
+          "standard_room": 6,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-12-19": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-20": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-21": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-22": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-23": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-24": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-12-25": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-26": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-27": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-28": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-29": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2025-12-30": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-12-31": {
+          "standard_room": 14,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2026-01-01": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-02": {
+          "standard_room": 13,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2026-01-03": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-04": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-05": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-06": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2026-01-07": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2026-01-08": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-09": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-10": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-11": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2026-01-12": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-13": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-15": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-16": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-17": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-18": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2026-01-19": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-20": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-21": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-22": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-23": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-24": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-25": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-26": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2026-01-27": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-28": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-29": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.8"
+    },
+    {
+      "property_id": "dubai_imperial_009",
+      "name": "Dubai Imperial Hotel",
+      "address": "900 Main Street, Dubai",
+      "star_rating": 3,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.043961965494073,
+        "lng": 55.43596585316594
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 240
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 385
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 675
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-02": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-03": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-11-04": {
+          "standard_room": 11,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-11-05": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-06": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-11-07": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-11-08": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-09": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-10": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-11-11": {
+          "standard_room": 9,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-12": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-11-13": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-14": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-15": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-11-16": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2025-11-17": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-18": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-19": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-11-20": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-11-21": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-11-22": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-23": {
+          "standard_room": 13,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-11-24": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-25": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-11-26": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-11-27": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-28": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 5
+        },
+        "2025-11-29": {
+          "standard_room": 14,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-30": {
+          "standard_room": 9,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-01": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-02": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-03": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2025-12-04": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-05": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2025-12-06": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-07": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-12-08": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-09": {
+          "standard_room": 12,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2025-12-10": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-11": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-12-12": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-13": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-14": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-12-15": {
+          "standard_room": 13,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-16": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2025-12-17": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-12-18": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-19": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-20": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-21": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 3
+        },
+        "2025-12-22": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-23": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-24": {
+          "standard_room": 12,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-12-25": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2025-12-26": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-27": {
+          "standard_room": 12,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-28": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-12-29": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-30": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-12-31": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-01": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-02": {
+          "standard_room": 9,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2026-01-03": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-04": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-05": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-06": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-07": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-08": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2026-01-09": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 1
+        },
+        "2026-01-10": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 2
+        },
+        "2026-01-11": {
+          "standard_room": 8,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-12": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-13": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 1
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-15": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-16": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-17": {
+          "standard_room": 13,
+          "deluxe_room": 10,
+          "executive_suite": 3
+        },
+        "2026-01-18": {
+          "standard_room": 6,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-19": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2026-01-20": {
+          "standard_room": 9,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2026-01-21": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-22": {
+          "standard_room": 13,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-24": {
+          "standard_room": 14,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2026-01-25": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-26": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-27": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-28": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-29": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.5"
+    },
+    {
+      "property_id": "dubai_meridian_010",
+      "name": "Dubai Meridian Hotel",
+      "address": "1000 Main Street, Dubai",
+      "star_rating": 3,
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant",
+        "WiFi",
+        "Parking"
+      ],
+      "coordinates": {
+        "lat": 25.312385039391682,
+        "lng": 55.8173235532957
+      },
+      "check_in_time": "15:00",
+      "check_out_time": "12:00",
+      "room_types": [
+        {
+          "room_type_id": "standard_room",
+          "name": "Standard Room",
+          "max_occupancy": 2,
+          "base_price_usd": 250
+        },
+        {
+          "room_type_id": "deluxe_room",
+          "name": "Deluxe Room",
+          "max_occupancy": 3,
+          "base_price_usd": 400
+        },
+        {
+          "room_type_id": "executive_suite",
+          "name": "Executive Suite",
+          "max_occupancy": 4,
+          "base_price_usd": 700
+        }
+      ],
+      "availability_calendar": {
+        "2025-11-01": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-02": {
+          "standard_room": 11,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-03": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-11-04": {
+          "standard_room": 14,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-05": {
+          "standard_room": 12,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-06": {
+          "standard_room": 11,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-07": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-08": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-09": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 5
+        },
+        "2025-11-10": {
+          "standard_room": 13,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-11-11": {
+          "standard_room": 12,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-12": {
+          "standard_room": 10,
+          "deluxe_room": 4,
+          "executive_suite": 1
+        },
+        "2025-11-13": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-14": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 4
+        },
+        "2025-11-15": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2025-11-16": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2025-11-17": {
+          "standard_room": 7,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-11-18": {
+          "standard_room": 13,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2025-11-19": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-11-20": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 1
+        },
+        "2025-11-21": {
+          "standard_room": 14,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-22": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 4
+        },
+        "2025-11-23": {
+          "standard_room": 8,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2025-11-24": {
+          "standard_room": 5,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-25": {
+          "standard_room": 11,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2025-11-26": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-11-27": {
+          "standard_room": 8,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-11-28": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 1
+        },
+        "2025-11-29": {
+          "standard_room": 8,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-11-30": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 3
+        },
+        "2025-12-01": {
+          "standard_room": 14,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-02": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-03": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-04": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-05": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-06": {
+          "standard_room": 5,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2025-12-07": {
+          "standard_room": 6,
+          "deluxe_room": 5,
+          "executive_suite": 5
+        },
+        "2025-12-08": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-09": {
+          "standard_room": 6,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2025-12-10": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2025-12-11": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2025-12-12": {
+          "standard_room": 10,
+          "deluxe_room": 5,
+          "executive_suite": 3
+        },
+        "2025-12-13": {
+          "standard_room": 7,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-14": {
+          "standard_room": 5,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-15": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-16": {
+          "standard_room": 9,
+          "deluxe_room": 9,
+          "executive_suite": 3
+        },
+        "2025-12-17": {
+          "standard_room": 7,
+          "deluxe_room": 3,
+          "executive_suite": 2
+        },
+        "2025-12-18": {
+          "standard_room": 5,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2025-12-19": {
+          "standard_room": 7,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-20": {
+          "standard_room": 8,
+          "deluxe_room": 9,
+          "executive_suite": 2
+        },
+        "2025-12-21": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2025-12-22": {
+          "standard_room": 6,
+          "deluxe_room": 4,
+          "executive_suite": 2
+        },
+        "2025-12-23": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-24": {
+          "standard_room": 8,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2025-12-25": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 4
+        },
+        "2025-12-26": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-27": {
+          "standard_room": 13,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2025-12-28": {
+          "standard_room": 9,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2025-12-29": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2025-12-30": {
+          "standard_room": 12,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2025-12-31": {
+          "standard_room": 11,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2026-01-01": {
+          "standard_room": 6,
+          "deluxe_room": 6,
+          "executive_suite": 4
+        },
+        "2026-01-02": {
+          "standard_room": 14,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2026-01-03": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 5
+        },
+        "2026-01-04": {
+          "standard_room": 10,
+          "deluxe_room": 7,
+          "executive_suite": 2
+        },
+        "2026-01-05": {
+          "standard_room": 12,
+          "deluxe_room": 7,
+          "executive_suite": 4
+        },
+        "2026-01-06": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-07": {
+          "standard_room": 7,
+          "deluxe_room": 10,
+          "executive_suite": 4
+        },
+        "2026-01-08": {
+          "standard_room": 7,
+          "deluxe_room": 5,
+          "executive_suite": 2
+        },
+        "2026-01-09": {
+          "standard_room": 6,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-10": {
+          "standard_room": 9,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-11": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 3
+        },
+        "2026-01-12": {
+          "standard_room": 10,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-13": {
+          "standard_room": 10,
+          "deluxe_room": 9,
+          "executive_suite": 4
+        },
+        "2026-01-14": {
+          "standard_room": 5,
+          "deluxe_room": 3,
+          "executive_suite": 4
+        },
+        "2026-01-15": {
+          "standard_room": 10,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-16": {
+          "standard_room": 5,
+          "deluxe_room": 10,
+          "executive_suite": 1
+        },
+        "2026-01-17": {
+          "standard_room": 10,
+          "deluxe_room": 3,
+          "executive_suite": 5
+        },
+        "2026-01-18": {
+          "standard_room": 11,
+          "deluxe_room": 10,
+          "executive_suite": 5
+        },
+        "2026-01-19": {
+          "standard_room": 10,
+          "deluxe_room": 6,
+          "executive_suite": 2
+        },
+        "2026-01-20": {
+          "standard_room": 7,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-21": {
+          "standard_room": 8,
+          "deluxe_room": 8,
+          "executive_suite": 5
+        },
+        "2026-01-22": {
+          "standard_room": 12,
+          "deluxe_room": 4,
+          "executive_suite": 3
+        },
+        "2026-01-23": {
+          "standard_room": 5,
+          "deluxe_room": 6,
+          "executive_suite": 1
+        },
+        "2026-01-24": {
+          "standard_room": 6,
+          "deluxe_room": 8,
+          "executive_suite": 2
+        },
+        "2026-01-25": {
+          "standard_room": 14,
+          "deluxe_room": 7,
+          "executive_suite": 3
+        },
+        "2026-01-26": {
+          "standard_room": 11,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-27": {
+          "standard_room": 7,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        },
+        "2026-01-28": {
+          "standard_room": 8,
+          "deluxe_room": 7,
+          "executive_suite": 5
+        },
+        "2026-01-29": {
+          "standard_room": 5,
+          "deluxe_room": 9,
+          "executive_suite": 1
+        }
+      },
+      "pricing_rules": {
+        "weekend_multiplier": 1.2,
+        "taxes": {
+          "rate": 0.1
+        }
+      },
+      "rating": "4.8"
+    }
+  ]
+}
