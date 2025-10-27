@@ -97,62 +97,136 @@ async function createSession({ client_id, domain }) {
     throw new Error("Domain not authorized");
   }
 
-  const session_id = `sess_${Date.now()}_${Math.random()
-    .toString(36)
-    .substr(2, 9)}`;
   const expires_at = new Date(Date.now() + 24 * 60 * 60 * 1000);
 
-  await supabase.from("sessions").insert({
-    session_id,
-    client_id,
-    session_type: "anonymous",
-    expires_at: expires_at.toISOString(),
-  });
+  const { data: session, error } = await supabase
+    .from("sessions")
+    .insert({
+      client_id,
+      session_type: "anonymous",
+      expires_at: expires_at.toISOString(),
+    })
+    .select()
+    .single();
 
-  return { session_id, client_config: client.branding_config };
+  if (error || !session) {
+    console.error("Session creation error:", error);
+    throw new Error("Failed to create session");
+  }
+
+  return {
+    session_id: session.session_id,
+    client_config: client.branding_config,
+  };
 }
 
 async function addToCart({ session_id, item }) {
-  let { data: cart } = await supabase
-    .from("carts")
-    .select("*")
-    .eq("session_id", session_id)
-    .single();
-
-  if (!cart) {
-    const { data: newCart } = await supabase
+  try {
+    // Check if cart exists
+    const { data: existingCarts, error: cartFetchError } = await supabase
       .from("carts")
+      .select("*")
+      .eq("session_id", session_id)
+      .eq("status", "active");
+
+    let cart;
+
+    if (cartFetchError) {
+      console.error("Cart fetch error:", cartFetchError);
+      throw new Error(`Failed to fetch cart: ${cartFetchError.message}`);
+    }
+
+    // If cart exists, use it
+    if (existingCarts && existingCarts.length > 0) {
+      cart = existingCarts[0];
+    } else {
+      // Create new cart
+      const { data: newCart, error: cartInsertError } = await supabase
+        .from("carts")
+        .insert({
+          session_id,
+          client_id: item.client_id,
+          status: "active",
+          expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
+        })
+        .select()
+        .single();
+
+      if (cartInsertError || !newCart) {
+        console.error("Cart creation error:", cartInsertError);
+        throw new Error(
+          `Failed to create cart: ${
+            cartInsertError?.message || "Unknown error"
+          }`
+        );
+      }
+
+      cart = newCart;
+    }
+
+    if (!cart || !cart.cart_id) {
+      throw new Error("Failed to get or create cart - cart_id is missing");
+    }
+
+    // Add item to cart
+    const { error: itemInsertError } = await supabase
+      .from("cart_items")
       .insert({
-        session_id,
-        client_id: item.client_id,
-        expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-      })
-      .select()
-      .single();
-    cart = newCart;
+        cart_id: cart.cart_id,
+        property_id: item.property_id,
+        property_type: item.property_type,
+        is_partner: item.is_partner,
+        service_details: item.service_details,
+        unit_price: item.unit_price,
+        quantity: item.quantity || 1,
+        total_price: item.total_price,
+        currency: item.currency || "USD",
+      });
+
+    if (itemInsertError) {
+      console.error("Cart item insertion error:", itemInsertError);
+      throw new Error(`Failed to add item to cart: ${itemInsertError.message}`);
+    }
+
+    return {
+      success: true,
+      cart_id: cart.cart_id,
+      message: "Item added to cart successfully",
+    };
+  } catch (error) {
+    console.error("Add to cart error:", error);
+    throw error;
   }
-
-  await supabase.from("cart_items").insert({
-    cart_id: cart.cart_id,
-    ...item,
-  });
-
-  return { success: true, cart_id: cart.cart_id };
 }
 
 async function getCart({ session_id }) {
-  const { data: cart } = await supabase
-    .from("carts")
-    .select(
+  try {
+    const { data: carts, error } = await supabase
+      .from("carts")
+      .select(
+        `
+        *,
+        cart_items (*)
       `
-      *,
-      cart_items(*)
-    `
-    )
-    .eq("session_id", session_id)
-    .single();
+      )
+      .eq("session_id", session_id)
+      .eq("status", "active");
 
-  return cart || { cart_items: [] };
+    if (error) {
+      console.error("Get cart error:", error);
+      // Return empty cart instead of throwing error
+      return { cart_items: [] };
+    }
+
+    if (!carts || carts.length === 0) {
+      return { cart_items: [] };
+    }
+
+    return carts[0];
+  } catch (error) {
+    console.error("Get cart error:", error);
+    return { cart_items: [] };
+  }
 }
 
 app.get("/health", (req, res) => {
