@@ -1,0 +1,80 @@
+service: hospitality-mcp-servers
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  memorySize: 1024
+  timeout: 30
+  environment:
+    SUPABASE_URL: ${env:SUPABASE_URL}
+    SUPABASE_SERVICE_KEY: ${env:SUPABASE_SERVICE_KEY}
+    NODE_ENV: production
+
+functions:
+  hotel:
+    handler: lambda-handlers/hotel-mcp-handler.handler
+    events:
+      - httpApi:
+          path: /hotel/mcp
+          method: post
+      - httpApi:
+          path: /hotel/health
+          method: get
+
+  restaurant:
+    handler: lambda-handlers/restaurant-mcp-handler.handler
+    events:
+      - httpApi:
+          path: /restaurant/mcp
+          method: post
+      - httpApi:
+          path: /restaurant/health
+          method: get
+
+  user:
+    handler: lambda-handlers/user-mcp-handler.handler
+    events:
+      - httpApi:
+          path: /user/mcp
+          method: post
+      - httpApi:
+          path: /user/health
+          method: get
+
+  partner:
+    handler: lambda-handlers/partner-mcp-handler.handler
+    events:
+      - httpApi:
+          path: /partner/mcp
+          method: post
+      - httpApi:
+          path: /partner/health
+          method: get
+
+  orchestrator:
+    handler: lambda-handlers/orchestrator-mcp-handler.handler
+    events:
+      - httpApi:
+          path: /mcp
+          method: post
+      - httpApi:
+          path: /health
+          method: get
+    environment:
+      HOTEL_MCP_URL: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/hotel/mcp'
+      RESTAURANT_MCP_URL: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/restaurant/mcp'
+      USER_MCP_URL: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/user/mcp'
+      PARTNER_MCP_URL: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/partner/mcp'
+
+package:
+  patterns:
+    - '!.git/**'
+    - '!logs/**'
+    - '!src/**'
+    - '!scripts/**'
+    - '!.env*'
+    - 'lambda-handlers/**'
+    - 'mock-data/**'
+    - 'node_modules/**'

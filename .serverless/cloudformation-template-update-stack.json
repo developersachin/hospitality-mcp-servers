@@ -1,0 +1,913 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "The AWS CloudFormation template for this Serverless application",
+  "Resources": {
+    "HotelLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hospitality-mcp-servers-dev-hotel"
+      }
+    },
+    "RestaurantLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hospitality-mcp-servers-dev-restaurant"
+      }
+    },
+    "UserLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hospitality-mcp-servers-dev-user"
+      }
+    },
+    "PartnerLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hospitality-mcp-servers-dev-partner"
+      }
+    },
+    "OrchestratorLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/hospitality-mcp-servers-dev-orchestrator"
+      }
+    },
+    "IamRoleLambdaExecution": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": [
+                  "lambda.amazonaws.com"
+                ]
+              },
+              "Action": [
+                "sts:AssumeRole"
+              ]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": {
+              "Fn::Join": [
+                "-",
+                [
+                  "hospitality-mcp-servers",
+                  "dev",
+                  "lambda"
+                ]
+              ]
+            },
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup",
+                    "logs:TagResource"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hospitality-mcp-servers-dev*:*"
+                    }
+                  ]
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/hospitality-mcp-servers-dev*:*:*"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "Path": "/",
+        "RoleName": {
+          "Fn::Join": [
+            "-",
+            [
+              "hospitality-mcp-servers",
+              "dev",
+              {
+                "Ref": "AWS::Region"
+              },
+              "lambdaRole"
+            ]
+          ]
+        }
+      }
+    },
+    "HotelLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+          "S3Key": "serverless/hospitality-mcp-servers/dev/1761617784987-2025-10-28T02:16:24.987Z/hospitality-mcp-servers.zip"
+        },
+        "Handler": "lambda-handlers/hotel-mcp-handler.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "hospitality-mcp-servers-dev-hotel",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "SUPABASE_URL": "https://cbtgdrvsrbfizhcmqisa.supabase.co",
+            "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNidGdkcnZzcmJmaXpoY21xaXNhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTU3NzgzNSwiZXhwIjoyMDc3MTUzODM1fQ.5mzsyNkH9TWd6IPDaSkWb14Xc9N5r6363CFvi-L4ZiQ",
+            "NODE_ENV": "production"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "HotelLogGroup"
+      ]
+    },
+    "RestaurantLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+          "S3Key": "serverless/hospitality-mcp-servers/dev/1761617784987-2025-10-28T02:16:24.987Z/hospitality-mcp-servers.zip"
+        },
+        "Handler": "lambda-handlers/restaurant-mcp-handler.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "hospitality-mcp-servers-dev-restaurant",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "SUPABASE_URL": "https://cbtgdrvsrbfizhcmqisa.supabase.co",
+            "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNidGdkcnZzcmJmaXpoY21xaXNhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTU3NzgzNSwiZXhwIjoyMDc3MTUzODM1fQ.5mzsyNkH9TWd6IPDaSkWb14Xc9N5r6363CFvi-L4ZiQ",
+            "NODE_ENV": "production"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "RestaurantLogGroup"
+      ]
+    },
+    "UserLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+          "S3Key": "serverless/hospitality-mcp-servers/dev/1761617784987-2025-10-28T02:16:24.987Z/hospitality-mcp-servers.zip"
+        },
+        "Handler": "lambda-handlers/user-mcp-handler.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "hospitality-mcp-servers-dev-user",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "SUPABASE_URL": "https://cbtgdrvsrbfizhcmqisa.supabase.co",
+            "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNidGdkcnZzcmJmaXpoY21xaXNhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTU3NzgzNSwiZXhwIjoyMDc3MTUzODM1fQ.5mzsyNkH9TWd6IPDaSkWb14Xc9N5r6363CFvi-L4ZiQ",
+            "NODE_ENV": "production"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "UserLogGroup"
+      ]
+    },
+    "PartnerLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+          "S3Key": "serverless/hospitality-mcp-servers/dev/1761617784987-2025-10-28T02:16:24.987Z/hospitality-mcp-servers.zip"
+        },
+        "Handler": "lambda-handlers/partner-mcp-handler.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "hospitality-mcp-servers-dev-partner",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "SUPABASE_URL": "https://cbtgdrvsrbfizhcmqisa.supabase.co",
+            "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNidGdkcnZzcmJmaXpoY21xaXNhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTU3NzgzNSwiZXhwIjoyMDc3MTUzODM1fQ.5mzsyNkH9TWd6IPDaSkWb14Xc9N5r6363CFvi-L4ZiQ",
+            "NODE_ENV": "production"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "PartnerLogGroup"
+      ]
+    },
+    "OrchestratorLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+          "S3Key": "serverless/hospitality-mcp-servers/dev/1761617784987-2025-10-28T02:16:24.987Z/hospitality-mcp-servers.zip"
+        },
+        "Handler": "lambda-handlers/orchestrator-mcp-handler.handler",
+        "Runtime": "nodejs18.x",
+        "FunctionName": "hospitality-mcp-servers-dev-orchestrator",
+        "MemorySize": 1024,
+        "Timeout": 30,
+        "Environment": {
+          "Variables": {
+            "SUPABASE_URL": "https://cbtgdrvsrbfizhcmqisa.supabase.co",
+            "SUPABASE_SERVICE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNidGdkcnZzcmJmaXpoY21xaXNhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTU3NzgzNSwiZXhwIjoyMDc3MTUzODM1fQ.5mzsyNkH9TWd6IPDaSkWb14Xc9N5r6363CFvi-L4ZiQ",
+            "NODE_ENV": "production",
+            "HOTEL_MCP_URL": {
+              "Fn::Sub": "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/hotel/mcp"
+            },
+            "RESTAURANT_MCP_URL": {
+              "Fn::Sub": "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/restaurant/mcp"
+            },
+            "USER_MCP_URL": {
+              "Fn::Sub": "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/user/mcp"
+            },
+            "PARTNER_MCP_URL": {
+              "Fn::Sub": "https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com/partner/mcp"
+            }
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "OrchestratorLogGroup"
+      ]
+    },
+    "HotelLambdaVersionlLGxr5FFpFYAlqHvLMRXH0QjKDkb1ozB4qOERaWSGU": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "HotelLambdaFunction"
+        },
+        "CodeSha256": "u2+yOzSgrBfvPVIgJEA5pqOGOW4cLtm7CEjHuVna70g="
+      }
+    },
+    "RestaurantLambdaVersionSIlxhpCLYrIqr63n0m8iKdfqoRPB9pbXbeLSjBLcv8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "RestaurantLambdaFunction"
+        },
+        "CodeSha256": "u2+yOzSgrBfvPVIgJEA5pqOGOW4cLtm7CEjHuVna70g="
+      }
+    },
+    "UserLambdaVersionOxyCFKX7cqvzkouAk9U8oq2bdFzA3VDzUJzKS4oU8": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "UserLambdaFunction"
+        },
+        "CodeSha256": "u2+yOzSgrBfvPVIgJEA5pqOGOW4cLtm7CEjHuVna70g="
+      }
+    },
+    "PartnerLambdaVersionzTJ4c055zV7M4FoNHNVo7n2FshzHIX9MludnZ4Difvo": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "PartnerLambdaFunction"
+        },
+        "CodeSha256": "u2+yOzSgrBfvPVIgJEA5pqOGOW4cLtm7CEjHuVna70g="
+      }
+    },
+    "OrchestratorLambdaVersion1dG2Mx7jd9mssInK0ZaG0sCt669QKlSFIDpDFSCQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "OrchestratorLambdaFunction"
+        },
+        "CodeSha256": "u2+yOzSgrBfvPVIgJEA5pqOGOW4cLtm7CEjHuVna70g="
+      }
+    },
+    "HttpApi": {
+      "Type": "AWS::ApiGatewayV2::Api",
+      "Properties": {
+        "Name": "dev-hospitality-mcp-servers",
+        "ProtocolType": "HTTP"
+      }
+    },
+    "HttpApiStage": {
+      "Type": "AWS::ApiGatewayV2::Stage",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "StageName": "$default",
+        "AutoDeploy": true,
+        "DefaultRouteSettings": {
+          "DetailedMetricsEnabled": false
+        }
+      }
+    },
+    "HotelLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "HotelLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationHotel": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "HotelLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostHotelMcp": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /hotel/mcp",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationHotel"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationHotel"
+    },
+    "HttpApiRouteGetHotelHealth": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /hotel/health",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationHotel"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationHotel"
+    },
+    "RestaurantLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "RestaurantLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationRestaurant": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "RestaurantLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostRestaurantMcp": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /restaurant/mcp",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationRestaurant"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationRestaurant"
+    },
+    "HttpApiRouteGetRestaurantHealth": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /restaurant/health",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationRestaurant"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationRestaurant"
+    },
+    "UserLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "UserLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationUser": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "UserLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostUserMcp": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /user/mcp",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationUser"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationUser"
+    },
+    "HttpApiRouteGetUserHealth": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /user/health",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationUser"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationUser"
+    },
+    "PartnerLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "PartnerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationPartner": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "PartnerLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostPartnerMcp": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /partner/mcp",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationPartner"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationPartner"
+    },
+    "HttpApiRouteGetPartnerHealth": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /partner/health",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationPartner"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationPartner"
+    },
+    "OrchestratorLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "OrchestratorLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationOrchestrator": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "OrchestratorLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostMcp": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /mcp",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationOrchestrator"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationOrchestrator"
+    },
+    "HttpApiRouteGetHealth": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "GET /health",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationOrchestrator"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationOrchestrator"
+    }
+  },
+  "Outputs": {
+    "ServerlessDeploymentBucketName": {
+      "Value": "serverless-framework-deployments-us-east-1-5f709e83-bbe3",
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-ServerlessDeploymentBucketName"
+      }
+    },
+    "HotelLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "HotelLambdaVersionlLGxr5FFpFYAlqHvLMRXH0QjKDkb1ozB4qOERaWSGU"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-HotelLambdaFunctionQualifiedArn"
+      }
+    },
+    "RestaurantLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "RestaurantLambdaVersionSIlxhpCLYrIqr63n0m8iKdfqoRPB9pbXbeLSjBLcv8"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-RestaurantLambdaFunctionQualifiedArn"
+      }
+    },
+    "UserLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "UserLambdaVersionOxyCFKX7cqvzkouAk9U8oq2bdFzA3VDzUJzKS4oU8"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-UserLambdaFunctionQualifiedArn"
+      }
+    },
+    "PartnerLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "PartnerLambdaVersionzTJ4c055zV7M4FoNHNVo7n2FshzHIX9MludnZ4Difvo"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-PartnerLambdaFunctionQualifiedArn"
+      }
+    },
+    "OrchestratorLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "OrchestratorLambdaVersion1dG2Mx7jd9mssInK0ZaG0sCt669QKlSFIDpDFSCQ"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-OrchestratorLambdaFunctionQualifiedArn"
+      }
+    },
+    "HttpApiId": {
+      "Description": "Id of the HTTP API",
+      "Value": {
+        "Ref": "HttpApi"
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-HttpApiId"
+      }
+    },
+    "HttpApiUrl": {
+      "Description": "URL of the HTTP API",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "HttpApi"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            }
+          ]
+        ]
+      },
+      "Export": {
+        "Name": "sls-hospitality-mcp-servers-dev-HttpApiUrl"
+      }
+    }
+  }
+}
