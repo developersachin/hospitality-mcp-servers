@@ -1,129 +1,420 @@
+// orchestrator-mcp/server.js - UPDATED WITH 12 TOOLS
 const express = require("express");
-const axios = require("axios");
-const { supabase } = require("../../config/supabase");
-require("dotenv").config({ path: "../../.env" });
+const { createClient } = require("@supabase/supabase-js");
 
 const app = express();
-const PORT = process.env.ORCHESTRATOR_PORT || 3000;
-
 app.use(express.json());
 
-// Child MCP endpoints - FIXED to use environment variables for Lambda
+// Supabase client
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
+);
+
+// Child MCP URLs - NOW USING ENV VARS FOR LAMBDA!
 const childMCPs = {
-  hotel:
-    process.env.HOTEL_MCP_URL ||
-    `http://localhost:${process.env.HOTEL_MCP_PORT || 3001}/mcp`,
-  restaurant:
-    process.env.RESTAURANT_MCP_URL ||
-    `http://localhost:${process.env.RESTAURANT_MCP_PORT || 3002}/mcp`,
-  user:
-    process.env.USER_MCP_URL ||
-    `http://localhost:${process.env.USER_MCP_PORT || 3003}/mcp`,
-  partner:
-    process.env.PARTNER_MCP_URL ||
-    `http://localhost:${process.env.PARTNER_MCP_PORT || 3004}/mcp`,
+  hotel: process.env.HOTEL_MCP_URL || `http://localhost:3001/mcp`,
+  restaurant: process.env.RESTAURANT_MCP_URL || `http://localhost:3002/mcp`,
+  user: process.env.USER_MCP_URL || `http://localhost:3003/mcp`,
+  partner: process.env.PARTNER_MCP_URL || `http://localhost:3004/mcp`,
 };
 
-// Log child MCP URLs on startup (helpful for debugging)
-console.log("🔗 Child MCP URLs configured:", childMCPs);
+console.log("Child MCP URLs:", childMCPs);
+
+// Helper: Call child MCP server
+async function callChildMCP(childName, toolName, args) {
+  const childUrl = childMCPs[childName];
+
+  try {
+    const response = await fetch(childUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        jsonrpc: "2.0",
+        id: "1",
+        method: "tools/call",
+        params: { name: toolName, arguments: args },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+
+    // Extract the actual result from MCP response
+    if (data.result?.content?.[0]?.text) {
+      return JSON.parse(data.result.content[0].text);
+    }
+
+    return data.result;
+  } catch (error) {
+    console.error(`Error calling ${childName} MCP:`, error);
+    throw new Error(`Failed to call ${childName} MCP: ${error.message}`);
+  }
+}
 
 // ============================================
-// MCP PROTOCOL ENDPOINTS
+// SESSION MANAGEMENT FUNCTIONS
+// ============================================
+
+async function createSession(args) {
+  const { client_id, domain } = args;
+
+  try {
+    // Create session in Supabase
+    const { data: session, error } = await supabase
+      .from("sessions")
+      .insert({
+        client_id,
+        domain,
+        status: "active",
+        context: {},
+        last_active: new Date().toISOString(),
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    // Initialize empty cart for this session
+    const { error: cartError } = await supabase.from("carts").insert({
+      session_id: session.session_id,
+      client_id,
+      status: "active",
+      cart_items: [],
+      total_amount: 0,
+      currency: "USD",
+    });
+
+    if (cartError) console.error("Cart creation error:", cartError);
+
+    return {
+      success: true,
+      session_id: session.session_id,
+      client_id: session.client_id,
+      created_at: session.created_at,
+    };
+  } catch (err) {
+    console.error("Session creation error:", err);
+    return { success: false, error: err.message };
+  }
+}
+
+async function getSession(args) {
+  const { session_id } = args;
+
+  try {
+    const { data: session, error } = await supabase
+      .from("sessions")
+      .select("*")
+      .eq("session_id", session_id)
+      .single();
+
+    if (error) throw error;
+    if (!session) throw new Error("Session not found");
+
+    // Update last_active
+    await supabase
+      .from("sessions")
+      .update({ last_active: new Date().toISOString() })
+      .eq("session_id", session_id);
+
+    return {
+      success: true,
+      session,
+    };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+// ============================================
+// CART MANAGEMENT FUNCTIONS
+// ============================================
+
+async function addToCart(args) {
+  const { session_id, item } = args;
+
+  try {
+    // Get current cart
+    const { data: cart, error: cartError } = await supabase
+      .from("carts")
+      .select("*")
+      .eq("session_id", session_id)
+      .eq("status", "active")
+      .single();
+
+    if (cartError) throw cartError;
+
+    // Add new item to cart_items array
+    const cartItems = cart.cart_items || [];
+    const newItem = {
+      cart_item_id: `item_${Date.now()}_${Math.random()
+        .toString(36)
+        .substr(2, 9)}`,
+      ...item,
+      added_at: new Date().toISOString(),
+    };
+    cartItems.push(newItem);
+
+    // Calculate new total
+    const newTotal = cartItems.reduce(
+      (sum, item) => sum + (item.total_price || 0),
+      0
+    );
+
+    // Update cart
+    const { error: updateError } = await supabase
+      .from("carts")
+      .update({
+        cart_items: cartItems,
+        total_amount: newTotal,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("cart_id", cart.cart_id);
+
+    if (updateError) throw updateError;
+
+    return {
+      success: true,
+      cart_id: cart.cart_id,
+      item_added: newItem,
+      total_items: cartItems.length,
+      total_amount: newTotal,
+    };
+  } catch (err) {
+    console.error("Add to cart error:", err);
+    return { success: false, error: err.message };
+  }
+}
+
+async function getCart(args) {
+  const { session_id } = args;
+
+  try {
+    const { data: cart, error } = await supabase
+      .from("carts")
+      .select("*")
+      .eq("session_id", session_id)
+      .eq("status", "active")
+      .single();
+
+    if (error) throw error;
+
+    return {
+      success: true,
+      cart_id: cart.cart_id,
+      session_id: cart.session_id,
+      cart_items: cart.cart_items || [],
+      total_amount: cart.total_amount || 0,
+      currency: cart.currency || "USD",
+      item_count: (cart.cart_items || []).length,
+    };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+async function removeFromCart(args) {
+  const { session_id, item_id } = args;
+
+  try {
+    // Get current cart
+    const { data: cart, error: cartError } = await supabase
+      .from("carts")
+      .select("*")
+      .eq("session_id", session_id)
+      .eq("status", "active")
+      .single();
+
+    if (cartError) throw cartError;
+
+    // Remove item from cart_items array
+    const cartItems = (cart.cart_items || []).filter(
+      (item) => item.cart_item_id !== item_id
+    );
+
+    // Calculate new total
+    const newTotal = cartItems.reduce(
+      (sum, item) => sum + (item.total_price || 0),
+      0
+    );
+
+    // Update cart
+    const { error: updateError } = await supabase
+      .from("carts")
+      .update({
+        cart_items: cartItems,
+        total_amount: newTotal,
+        updated_at: new Date().toISOString(),
+      })
+      .eq("cart_id", cart.cart_id);
+
+    if (updateError) throw updateError;
+
+    return {
+      success: true,
+      removed_item_id: item_id,
+      remaining_items: cartItems.length,
+      total_amount: newTotal,
+    };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+// ============================================
+// CONVERSATION CONTEXT FUNCTIONS
+// ============================================
+
+async function addContext(args) {
+  const { session_id, role, content, intent, entities } = args;
+
+  try {
+    const { data: context, error } = await supabase
+      .from("conversation_context")
+      .insert({
+        session_id,
+        role,
+        content,
+        intent,
+        entities: entities || {},
+        timestamp: new Date().toISOString(),
+      })
+      .select()
+      .single();
+
+    if (error) throw error;
+
+    return {
+      success: true,
+      context_id: context.context_id,
+      message_saved: true,
+    };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+async function getConversationHistory(args) {
+  const { session_id, limit = 20 } = args;
+
+  try {
+    const { data: history, error } = await supabase
+      .from("conversation_context")
+      .select("*")
+      .eq("session_id", session_id)
+      .order("timestamp", { ascending: false })
+      .limit(limit);
+
+    if (error) throw error;
+
+    return {
+      success: true,
+      session_id,
+      message_count: history.length,
+      messages: history.reverse(), // Return in chronological order
+    };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+}
+
+// ============================================
+// MCP SERVER ROUTES
 // ============================================
 
 app.post("/mcp", async (req, res) => {
   const { method, params } = req.body;
 
-  // List all available tools
+  // TOOLS/LIST - Return all 12 available tools
   if (method === "tools/list") {
     return res.json({
       jsonrpc: "2.0",
       id: req.body.id,
       result: {
         tools: [
-          // Session Management
           {
             name: "session_create",
-            description: "Create new session for user",
+            description: "Create new user session",
             inputSchema: {
               type: "object",
               properties: {
-                client_id: { type: "string", description: "Client UUID" },
-                domain: { type: "string", description: "Origin domain" },
+                client_id: { type: "string" },
+                domain: { type: "string" },
               },
               required: ["client_id", "domain"],
             },
           },
           {
             name: "session_get",
-            description: "Get existing session by session_id",
+            description: "Get existing session details",
             inputSchema: {
               type: "object",
               properties: {
-                session_id: { type: "string", description: "Session UUID" },
+                session_id: { type: "string" },
               },
               required: ["session_id"],
             },
           },
-
-          // Hotel Operations (delegates to Hotel MCP)
           {
             name: "search_hotels",
-            description: "Search hotels by location and dates",
+            description: "Search for hotels via Hotel MCP",
             inputSchema: {
               type: "object",
               properties: {
                 location: { type: "string" },
-                check_in: { type: "string" },
-                check_out: { type: "string" },
+                check_in_date: { type: "string" },
+                check_out_date: { type: "string" },
                 guests: { type: "number" },
-                client_id: { type: "string" },
               },
-              required: ["location", "check_in", "check_out", "client_id"],
+              required: ["location"],
             },
           },
           {
             name: "hotel_details_get",
-            description: "Get detailed information about specific hotel",
+            description: "Get detailed hotel information including rooms",
             inputSchema: {
               type: "object",
               properties: {
                 hotel_id: { type: "string" },
-                client_id: { type: "string" },
+                check_in_date: { type: "string" },
+                check_out_date: { type: "string" },
+                guests: { type: "number" },
               },
-              required: ["hotel_id", "client_id"],
+              required: ["hotel_id"],
             },
           },
-
-          // Restaurant Operations (delegates to Restaurant MCP)
           {
             name: "search_restaurants",
-            description: "Search restaurants by location",
+            description: "Search for restaurants via Restaurant MCP",
             inputSchema: {
               type: "object",
               properties: {
                 location: { type: "string" },
-                cuisine: { type: "string" },
-                party_size: { type: "number" },
-                client_id: { type: "string" },
+                date: { type: "string" },
+                time: { type: "string" },
+                guests: { type: "number" },
               },
-              required: ["location", "client_id"],
+              required: ["location"],
             },
           },
           {
             name: "restaurant_details_get",
-            description: "Get detailed information about specific restaurant",
+            description: "Get detailed restaurant information including menu",
             inputSchema: {
               type: "object",
               properties: {
                 restaurant_id: { type: "string" },
-                client_id: { type: "string" },
+                date: { type: "string" },
+                time: { type: "string" },
+                guests: { type: "number" },
               },
-              required: ["restaurant_id", "client_id"],
+              required: ["restaurant_id"],
             },
           },
-
-          // Cart Operations (direct Supabase)
           {
             name: "cart_add_item",
             description: "Add item to shopping cart",
@@ -138,7 +429,7 @@ app.post("/mcp", async (req, res) => {
           },
           {
             name: "cart_get",
-            description: "Get current cart contents",
+            description: "Get shopping cart contents",
             inputSchema: {
               type: "object",
               properties: {
@@ -149,7 +440,7 @@ app.post("/mcp", async (req, res) => {
           },
           {
             name: "cart_remove_item",
-            description: "Remove item from cart",
+            description: "Remove item from shopping cart",
             inputSchema: {
               type: "object",
               properties: {
@@ -159,49 +450,46 @@ app.post("/mcp", async (req, res) => {
               required: ["session_id", "item_id"],
             },
           },
-
-          // Conversation History (direct Supabase)
           {
             name: "conversation_history_get",
-            description: "Get conversation history for session",
+            description: "Get conversation history for a session",
             inputSchema: {
               type: "object",
               properties: {
                 session_id: { type: "string" },
-                limit: { type: "number", default: 20 },
+                limit: { type: "number" },
               },
               required: ["session_id"],
             },
           },
           {
             name: "context_add",
-            description: "Add message to conversation history",
+            description: "Add message to conversation context",
             inputSchema: {
               type: "object",
               properties: {
                 session_id: { type: "string" },
-                role: { type: "string", enum: ["user", "assistant"] },
+                role: { type: "string" },
                 content: { type: "string" },
+                intent: { type: "string" },
+                entities: { type: "object" },
               },
               required: ["session_id", "role", "content"],
             },
           },
-
-          // Partner Operations (delegates to Partner MCP)
           {
             name: "partner_properties_get",
-            description: "Get partner properties for recommendations",
+            description: "Get partner property recommendations",
             inputSchema: {
               type: "object",
               properties: {
                 location: { type: "string" },
-                property_type: {
-                  type: "string",
-                  enum: ["hotel", "restaurant"],
-                },
-                client_id: { type: "string" },
+                property_type: { type: "string" },
+                check_in_date: { type: "string" },
+                check_out_date: { type: "string" },
+                guests: { type: "number" },
               },
-              required: ["location", "property_type", "client_id"],
+              required: ["location", "property_type"],
             },
           },
         ],
@@ -209,544 +497,251 @@ app.post("/mcp", async (req, res) => {
     });
   }
 
-  // Execute tool calls
+  // TOOLS/CALL - Execute tool
   if (method === "tools/call") {
     const { name, arguments: args } = params;
 
     try {
       let result;
 
-      // Route to appropriate handler
-      switch (name) {
+      // Session Management
+      if (name === "session_create") {
+        result = await createSession(args);
+      } else if (name === "session_get") {
+        result = await getSession(args);
+      }
+      // Hotel Services (delegate to Hotel MCP)
+      else if (name === "search_hotels") {
+        result = await callChildMCP("hotel", "search_hotels", args);
+      } else if (name === "hotel_details_get") {
+        result = await callChildMCP("hotel", "get_hotel_details", args);
+      }
+      // Restaurant Services (delegate to Restaurant MCP)
+      else if (name === "search_restaurants") {
+        result = await callChildMCP("restaurant", "search_restaurants", args);
+      } else if (name === "restaurant_details_get") {
+        result = await callChildMCP(
+          "restaurant",
+          "get_restaurant_details",
+          args
+        );
+      }
+      // Cart Management
+      else if (name === "cart_add_item") {
+        result = await addToCart(args);
+      } else if (name === "cart_get") {
+        result = await getCart(args);
+      } else if (name === "cart_remove_item") {
+        result = await removeFromCart(args);
+      }
+      // Conversation Context
+      else if (name === "conversation_history_get") {
+        result = await getConversationHistory(args);
+      } else if (name === "context_add") {
+        result = await addContext(args);
+      }
+      // Partner Services (delegate to Partner MCP)
+      else if (name === "partner_properties_get") {
+        result = await callChildMCP("partner", "get_partner_properties", args);
+      }
+      // Unknown tool
+      else {
+        throw new Error(`Unknown tool: ${name}`);
+      }
+
+      res.json({
+        jsonrpc: "2.0",
+        id: req.body.id,
+        result: {
+          content: [
+            {
+              type: "text",
+              text: JSON.stringify(result),
+            },
+          ],
+        },
+      });
+    } catch (error) {
+      console.error(`Tool execution error (${name}):`, error);
+      res.json({
+        jsonrpc: "2.0",
+        id: req.body.id,
+        error: {
+          code: -32000,
+          message: error.message,
+        },
+      });
+    }
+  }
+});
+
+// Health check
+app.get("/health", (req, res) => {
+  res.json({
+    status: "healthy",
+    service: "orchestrator-mcp",
+    tools: 12,
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// Export for Lambda
+module.exports.handler = async (event, context) => {
+  // Convert API Gateway event to Express-like request
+  const request = {
+    body: JSON.parse(event.body || "{}"),
+    headers: event.headers,
+    method: event.httpMethod,
+    path: event.path,
+  };
+
+  // Create response object
+  let response = {
+    statusCode: 200,
+    headers: { "Content-Type": "application/json" },
+    body: "",
+  };
+
+  // Handle the request
+  if (request.path === "/health") {
+    response.body = JSON.stringify({
+      status: "healthy",
+      service: "orchestrator-mcp",
+      tools: 12,
+      timestamp: new Date().toISOString(),
+    });
+  } else {
+    // Handle MCP request
+    const { method, params } = request.body;
+
+    if (method === "tools/list") {
+      response.body = JSON.stringify({
+        jsonrpc: "2.0",
+        id: request.body.id,
+        result: {
+          tools: [
+            { name: "session_create", description: "Create new user session" },
+            {
+              name: "session_get",
+              description: "Get existing session details",
+            },
+            {
+              name: "search_hotels",
+              description: "Search for hotels via Hotel MCP",
+            },
+            {
+              name: "hotel_details_get",
+              description: "Get detailed hotel information",
+            },
+            {
+              name: "search_restaurants",
+              description: "Search for restaurants via Restaurant MCP",
+            },
+            {
+              name: "restaurant_details_get",
+              description: "Get detailed restaurant information",
+            },
+            { name: "cart_add_item", description: "Add item to shopping cart" },
+            { name: "cart_get", description: "Get shopping cart contents" },
+            {
+              name: "cart_remove_item",
+              description: "Remove item from shopping cart",
+            },
+            {
+              name: "conversation_history_get",
+              description: "Get conversation history",
+            },
+            {
+              name: "context_add",
+              description: "Add message to conversation context",
+            },
+            {
+              name: "partner_properties_get",
+              description: "Get partner property recommendations",
+            },
+          ],
+        },
+      });
+    } else if (method === "tools/call") {
+      const { name, arguments: args } = params;
+
+      try {
+        let result;
+
         // Session Management
-        case "session_create":
+        if (name === "session_create") {
           result = await createSession(args);
-          break;
-        case "session_get":
+        } else if (name === "session_get") {
           result = await getSession(args);
-          break;
-
-        // Hotel Operations
-        case "search_hotels":
+        }
+        // Hotel Services
+        else if (name === "search_hotels") {
           result = await callChildMCP("hotel", "search_hotels", args);
-          break;
-        case "hotel_details_get":
+        } else if (name === "hotel_details_get") {
           result = await callChildMCP("hotel", "get_hotel_details", args);
-          break;
-
-        // Restaurant Operations
-        case "search_restaurants":
+        }
+        // Restaurant Services
+        else if (name === "search_restaurants") {
           result = await callChildMCP("restaurant", "search_restaurants", args);
-          break;
-        case "restaurant_details_get":
+        } else if (name === "restaurant_details_get") {
           result = await callChildMCP(
             "restaurant",
             "get_restaurant_details",
             args
           );
-          break;
-
-        // Cart Operations
-        case "cart_add_item":
+        }
+        // Cart Management
+        else if (name === "cart_add_item") {
           result = await addToCart(args);
-          break;
-        case "cart_get":
+        } else if (name === "cart_get") {
           result = await getCart(args);
-          break;
-        case "cart_remove_item":
+        } else if (name === "cart_remove_item") {
           result = await removeFromCart(args);
-          break;
-
-        // Conversation History
-        case "conversation_history_get":
+        }
+        // Conversation Context
+        else if (name === "conversation_history_get") {
           result = await getConversationHistory(args);
-          break;
-        case "context_add":
+        } else if (name === "context_add") {
           result = await addContext(args);
-          break;
-
-        // Partner Operations
-        case "partner_properties_get":
+        }
+        // Partner Services
+        else if (name === "partner_properties_get") {
           result = await callChildMCP(
             "partner",
             "get_partner_properties",
             args
           );
-          break;
-
-        default:
+        } else {
           throw new Error(`Unknown tool: ${name}`);
+        }
+
+        response.body = JSON.stringify({
+          jsonrpc: "2.0",
+          id: request.body.id,
+          result: {
+            content: [{ type: "text", text: JSON.stringify(result) }],
+          },
+        });
+      } catch (error) {
+        response.statusCode = 500;
+        response.body = JSON.stringify({
+          jsonrpc: "2.0",
+          id: request.body.id,
+          error: { code: -32000, message: error.message },
+        });
       }
-
-      res.json({
-        jsonrpc: "2.0",
-        id: req.body.id,
-        result: { content: [{ type: "text", text: JSON.stringify(result) }] },
-      });
-    } catch (error) {
-      console.error(`Error executing tool ${name}:`, error);
-      res.json({
-        jsonrpc: "2.0",
-        id: req.body.id,
-        error: { code: -32000, message: error.message },
-      });
     }
   }
-});
 
-// ============================================
-// HELPER FUNCTIONS
-// ============================================
+  return response;
+};
 
-// Call child MCP server
-async function callChildMCP(mcpName, tool, args) {
-  try {
-    const response = await axios.post(childMCPs[mcpName], {
-      jsonrpc: "2.0",
-      id: "1",
-      method: "tools/call",
-      params: { name: tool, arguments: args },
-    });
-
-    if (response.data.error) {
-      throw new Error(response.data.error.message);
-    }
-
-    return JSON.parse(response.data.result.content[0].text);
-  } catch (error) {
-    console.error(`Error calling ${mcpName} MCP:`, error.message);
-    throw new Error(`Failed to call ${mcpName} service: ${error.message}`);
-  }
-}
-
-// ============================================
-// SESSION MANAGEMENT
-// ============================================
-
-async function createSession({ client_id, domain }) {
-  try {
-    // Validate client exists
-    const { data: client, error: clientError } = await supabase
-      .from("clients")
-      .select("*")
-      .eq("id", client_id)
-      .single();
-
-    if (clientError || !client) {
-      throw new Error("Client not found");
-    }
-
-    // Create session
-    const expires_at = new Date(Date.now() + 24 * 60 * 60 * 1000);
-
-    const { data: session, error: sessionError } = await supabase
-      .from("sessions")
-      .insert({
-        session_id: generateSessionId(),
-        client_id: client_id,
-        status: "active",
-        expires_at: expires_at.toISOString(),
-      })
-      .select()
-      .single();
-
-    if (sessionError || !session) {
-      console.error("Session creation error:", sessionError);
-      throw new Error("Failed to create session");
-    }
-
-    return {
-      success: true,
-      session_id: session.session_id,
-      client_id: client.id,
-      client_config: {
-        name: client.name,
-        primary_color: client.primary_color,
-        secondary_color: client.secondary_color,
-        enabled_services: client.enabled_services,
-      },
-      expires_at: session.expires_at,
-    };
-  } catch (error) {
-    console.error("Create session error:", error);
-    return { success: false, error: error.message };
-  }
-}
-
-async function getSession({ session_id }) {
-  try {
-    const { data, error } = await supabase
-      .from("sessions")
-      .select(
-        `
-        *,
-        clients (
-          id,
-          name,
-          primary_color,
-          secondary_color,
-          enabled_services
-        )
-      `
-      )
-      .eq("session_id", session_id)
-      .single();
-
-    if (error || !data) {
-      return {
-        success: false,
-        error: "Session not found",
-      };
-    }
-
-    return {
-      success: true,
-      session_id: data.session_id,
-      client_id: data.client_id,
-      user_id: data.user_id,
-      status: data.status,
-      created_at: data.created_at,
-      expires_at: data.expires_at,
-      client_config: data.clients
-        ? {
-            name: data.clients.name,
-            primary_color: data.clients.primary_color,
-            secondary_color: data.clients.secondary_color,
-            enabled_services: data.clients.enabled_services,
-          }
-        : null,
-    };
-  } catch (err) {
-    console.error("Get session error:", err);
-    return { success: false, error: err.message };
-  }
-}
-
-// ============================================
-// CONVERSATION HISTORY
-// ============================================
-
-async function getConversationHistory({ session_id, limit = 20 }) {
-  try {
-    const { data, error } = await supabase
-      .from("conversation_history")
-      .select("*")
-      .eq("session_id", session_id)
-      .order("turn_number", { ascending: false })
-      .limit(limit);
-
-    if (error) {
-      console.error("Get history error:", error);
-      return { success: false, error: error.message, messages: [] };
-    }
-
-    // Reverse to get chronological order (oldest first)
-    const messages = (data || []).reverse().map((msg) => {
-      const isUser = msg.user_message !== null;
-      return {
-        role: isUser ? "user" : "assistant",
-        content: isUser ? msg.user_message : msg.assistant_message,
-        turn_number: msg.turn_number,
-        timestamp: msg.created_at,
-      };
-    });
-
-    return {
-      success: true,
-      session_id: session_id,
-      messages: messages,
-      count: messages.length,
-    };
-  } catch (err) {
-    console.error("Get history error:", err);
-    return { success: false, error: err.message, messages: [] };
-  }
-}
-
-async function addContext({ session_id, role, content }) {
-  try {
-    // Verify session exists
-    const { data: sessionCheck } = await supabase
-      .from("sessions")
-      .select("id")
-      .eq("session_id", session_id)
-      .single();
-
-    if (!sessionCheck) {
-      return { success: false, error: "Session not found" };
-    }
-
-    // Get current turn number
-    const { data: lastTurn } = await supabase
-      .from("conversation_history")
-      .select("turn_number")
-      .eq("session_id", session_id)
-      .order("turn_number", { ascending: false })
-      .limit(1)
-      .single();
-
-    const nextTurn = (lastTurn?.turn_number || 0) + 1;
-
-    // Prepare insert data
-    const insertData = {
-      session_id: sessionCheck.id,
-      turn_number: nextTurn,
-      created_at: new Date().toISOString(),
-    };
-
-    // Add message based on role
-    if (role === "user") {
-      insertData.user_message = content;
-      insertData.assistant_message = null;
-    } else {
-      insertData.user_message = null;
-      insertData.assistant_message = content;
-    }
-
-    const { data, error } = await supabase
-      .from("conversation_history")
-      .insert(insertData)
-      .select()
-      .single();
-
-    if (error) {
-      console.error("Add context error:", error);
-      return { success: false, error: error.message };
-    }
-
-    return {
-      success: true,
-      message_id: data.id,
-      session_id: session_id,
-      turn_number: nextTurn,
-      role: role,
-    };
-  } catch (err) {
-    console.error("Add context error:", err);
-    return { success: false, error: err.message };
-  }
-}
-
-// ============================================
-// CART OPERATIONS
-// ============================================
-
-async function addToCart({ session_id, item }) {
-  try {
-    // Get session internal ID
-    const { data: session } = await supabase
-      .from("sessions")
-      .select("id, client_id")
-      .eq("session_id", session_id)
-      .single();
-
-    if (!session) {
-      throw new Error("Session not found");
-    }
-
-    // Check if cart exists
-    const { data: existingCarts, error: cartFetchError } = await supabase
-      .from("carts")
-      .select("*")
-      .eq("session_id", session.id)
-      .eq("status", "active");
-
-    let cart;
-
-    if (cartFetchError) {
-      console.error("Cart fetch error:", cartFetchError);
-      throw new Error(`Failed to fetch cart: ${cartFetchError.message}`);
-    }
-
-    // If cart exists, use it
-    if (existingCarts && existingCarts.length > 0) {
-      cart = existingCarts[0];
-    } else {
-      // Create new cart
-      const { data: newCart, error: cartInsertError } = await supabase
-        .from("carts")
-        .insert({
-          session_id: session.id,
-          client_id: session.client_id,
-          status: "active",
-          expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-        })
-        .select()
-        .single();
-
-      if (cartInsertError || !newCart) {
-        console.error("Cart creation error:", cartInsertError);
-        throw new Error(
-          `Failed to create cart: ${
-            cartInsertError?.message || "Unknown error"
-          }`
-        );
-      }
-
-      cart = newCart;
-    }
-
-    if (!cart || !cart.cart_id) {
-      throw new Error("Failed to get or create cart - cart_id is missing");
-    }
-
-    // Add item to cart
-    const { data: cartItem, error: itemInsertError } = await supabase
-      .from("cart_items")
-      .insert({
-        cart_id: cart.cart_id,
-        property_id: item.property_id,
-        property_type: item.property_type,
-        is_partner: item.is_partner || false,
-        service_details: item.service_details,
-        unit_price: item.unit_price,
-        quantity: item.quantity || 1,
-        total_price: item.total_price,
-        currency: item.currency || "AED",
-      })
-      .select()
-      .single();
-
-    if (itemInsertError) {
-      console.error("Cart item insertion error:", itemInsertError);
-      throw new Error(`Failed to add item to cart: ${itemInsertError.message}`);
-    }
-
-    return {
-      success: true,
-      cart_id: cart.cart_id,
-      item_id: cartItem.cart_item_id,
-      message: "Item added to cart successfully",
-    };
-  } catch (error) {
-    console.error("Add to cart error:", error);
-    return { success: false, error: error.message };
-  }
-}
-
-async function getCart({ session_id }) {
-  try {
-    // Get session internal ID
-    const { data: session } = await supabase
-      .from("sessions")
-      .select("id")
-      .eq("session_id", session_id)
-      .single();
-
-    if (!session) {
-      return { success: true, cart_items: [] };
-    }
-
-    const { data: carts, error } = await supabase
-      .from("carts")
-      .select(
-        `
-        *,
-        cart_items (*)
-      `
-      )
-      .eq("session_id", session.id)
-      .eq("status", "active");
-
-    if (error) {
-      console.error("Get cart error:", error);
-      return { success: true, cart_items: [] };
-    }
-
-    if (!carts || carts.length === 0) {
-      return { success: true, cart_items: [] };
-    }
-
-    return {
-      success: true,
-      cart_id: carts[0].cart_id,
-      cart_items: carts[0].cart_items || [],
-      total_items: (carts[0].cart_items || []).length,
-      expires_at: carts[0].expires_at,
-    };
-  } catch (error) {
-    console.error("Get cart error:", error);
-    return { success: true, cart_items: [] };
-  }
-}
-
-async function removeFromCart({ session_id, item_id }) {
-  try {
-    // Get session internal ID
-    const { data: session } = await supabase
-      .from("sessions")
-      .select("id")
-      .eq("session_id", session_id)
-      .single();
-
-    if (!session) {
-      return { success: false, error: "Session not found" };
-    }
-
-    // Get cart
-    const { data: carts } = await supabase
-      .from("carts")
-      .select("cart_id")
-      .eq("session_id", session.id)
-      .eq("status", "active")
-      .single();
-
-    if (!carts) {
-      return { success: false, error: "Cart not found" };
-    }
-
-    // Delete item
-    const { error } = await supabase
-      .from("cart_items")
-      .delete()
-      .eq("cart_id", carts.cart_id)
-      .eq("cart_item_id", item_id);
-
-    if (error) {
-      console.error("Remove from cart error:", error);
-      return { success: false, error: error.message };
-    }
-
-    // Get updated cart
-    const updatedCart = await getCart({ session_id });
-
-    return {
-      success: true,
-      removed_item_id: item_id,
-      cart: updatedCart,
-    };
-  } catch (err) {
-    console.error("Remove from cart error:", err);
-    return { success: false, error: err.message };
-  }
-}
-
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-
-function generateSessionId() {
-  return `sess_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-}
-
-// ============================================
-// HEALTH CHECK
-// ============================================
-
-app.get("/health", (req, res) => {
-  res.json({
-    status: "healthy",
-    service: "orchestrator-mcp",
-    timestamp: new Date().toISOString(),
-    childMCPs: Object.keys(childMCPs),
+// For local development
+if (require.main === module) {
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Orchestrator MCP running on port ${PORT}`);
+    console.log(`📊 Available tools: 12`);
+    console.log(`🔗 Child MCPs:`, childMCPs);
   });
-});
-
-// ============================================
-// START SERVER
-// ============================================
-
-app.listen(PORT, () => {
-  console.log(`🎯 Orchestrator MCP Server running on http://localhost:${PORT}`);
-  console.log(`📡 Connected to ${Object.keys(childMCPs).length} child MCPs`);
-});
+}
