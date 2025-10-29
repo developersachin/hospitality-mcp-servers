@@ -517,6 +517,7 @@ async function addContext(args) {
     return {
       success: true,
       context_id: context.context_id,
+      session_id: session_id,
       message: "Context saved successfully",
     };
   } catch (error) {
