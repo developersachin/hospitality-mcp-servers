@@ -21,6 +21,84 @@ const childMCPs = {
 };
 
 // ==================================================
+// LOCATION NORMALIZATION HELPERS
+// ==================================================
+function normalizeLocation(location) {
+  if (!location) return "";
+
+  const loc = location.toLowerCase().trim();
+
+  // Map famous landmarks/areas to their cities
+  const locationMap = {
+    // Dubai
+    "burj khalifa": "dubai",
+    "burj al arab": "dubai",
+    "downtown dubai": "dubai",
+    "dubai marina": "dubai",
+    "palm jumeirah": "dubai",
+    deira: "dubai",
+    jbr: "dubai",
+    "jumeirah beach": "dubai",
+    "business bay": "dubai",
+    "dubai mall": "dubai",
+
+    // New York
+    "times square": "new york",
+    manhattan: "new york",
+    brooklyn: "new york",
+    "central park": "new york",
+    "empire state building": "new york",
+    "statue of liberty": "new york",
+
+    // Paris
+    "eiffel tower": "paris",
+    "champs elysees": "paris",
+    "champs-élysées": "paris",
+    montmartre: "paris",
+    louvre: "paris",
+    "arc de triomphe": "paris",
+
+    // London
+    "big ben": "london",
+    "tower bridge": "london",
+    westminster: "london",
+    "buckingham palace": "london",
+    "london eye": "london",
+
+    // Singapore
+    "marina bay sands": "singapore",
+    sentosa: "singapore",
+    "orchard road": "singapore",
+
+    // Tokyo
+    shibuya: "tokyo",
+    shinjuku: "tokyo",
+    roppongi: "tokyo",
+    "tokyo tower": "tokyo",
+
+    // Add more mappings as needed
+  };
+
+  // Check if location contains any mapped landmark
+  for (const [landmark, city] of Object.entries(locationMap)) {
+    if (loc.includes(landmark)) {
+      console.log(`📍 Location normalized: "${location}" → "${city}"`);
+      return city;
+    }
+  }
+
+  // Remove country/state info (keep first part before comma)
+  const parts = loc.split(",");
+  const normalized = parts[0].trim();
+
+  if (normalized !== loc) {
+    console.log(`📍 Location cleaned: "${location}" → "${normalized}"`);
+  }
+
+  return normalized;
+}
+
+// ==================================================
 // HEALTH CHECK
 // ==================================================
 app.get("*/health", (req, res) => {
@@ -89,13 +167,39 @@ app.post("*/mcp", async (req, res) => {
           result = await getSession(args);
           break;
         case "search_hotels":
-          result = await callChildMCP("hotel", "search_hotels", args);
+          // Normalize location before calling child MCP
+          const normalizedHotelArgs = { ...args };
+          if (args.location) {
+            normalizedHotelArgs.location = normalizeLocation(args.location);
+          }
+          console.log(
+            "🏨 Search hotels with normalized args:",
+            normalizedHotelArgs
+          );
+          result = await callChildMCP(
+            "hotel",
+            "search_hotels",
+            normalizedHotelArgs
+          );
           break;
         case "hotel_details_get":
           result = await callChildMCP("hotel", "get_hotel_details", args);
           break;
         case "search_restaurants":
-          result = await callChildMCP("restaurant", "search_restaurants", args);
+          // Normalize location for restaurants too
+          const normalizedRestArgs = { ...args };
+          if (args.location) {
+            normalizedRestArgs.location = normalizeLocation(args.location);
+          }
+          console.log(
+            "🍽️ Search restaurants with normalized args:",
+            normalizedRestArgs
+          );
+          result = await callChildMCP(
+            "restaurant",
+            "search_restaurants",
+            normalizedRestArgs
+          );
           break;
         case "restaurant_details_get":
           result = await callChildMCP(
@@ -120,10 +224,15 @@ app.post("*/mcp", async (req, res) => {
           result = await addContext(args);
           break;
         case "partner_properties_get":
+          // Normalize location for partner properties
+          const normalizedPartnerArgs = { ...args };
+          if (args.location) {
+            normalizedPartnerArgs.location = normalizeLocation(args.location);
+          }
           result = await callChildMCP(
             "partner",
             "get_partner_properties",
-            args
+            normalizedPartnerArgs
           );
           break;
         default:
@@ -328,7 +437,7 @@ async function cartAddItem(args) {
         .from("carts")
         .insert({
           session_id,
-          client_id: session.client_id, // ← FIX: Use client_id from session
+          client_id: session.client_id,
           status: "active",
           expires_at: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
         })
